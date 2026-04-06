@@ -42,4 +42,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('scroll', revealOnScroll);
     revealOnScroll(); // Initial check
+
+    // Form Submissions
+    const submitCaseForm = document.getElementById('submit-case-form');
+    const joinAgencyForm = document.getElementById('join-agency-form');
+
+    if (submitCaseForm) {
+        submitCaseForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            submitCaseForm.style.display = 'none';
+            document.getElementById('form-success').style.display = 'block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
+    if (joinAgencyForm) {
+        joinAgencyForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            joinAgencyForm.style.display = 'none';
+            document.getElementById('join-success').style.display = 'block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
 });
